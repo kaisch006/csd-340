@@ -1,0 +1,69 @@
+/* Kaiser, Christopher : Assignment 3.2.css */
+
+#container {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+html, body {
+    font-size: 16px;
+}
+
+p {
+    font-weight: 400;
+    line-height: 1.4em;
+}
+
+h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: #333333;
+    background-color: #87CEEB;
+    border: 1px solid #D6A800;
+}
+
+h2 {
+    font-weight: 500;
+    text-align: left;
+    padding-top: 10px;
+    color: #333333;
+    background-color: #90EE90;
+    border: 1px solid #D6A800;
+}
+
+h3 {
+    font-weight: 500;
+    text-align: left;
+    padding-top: 10px;
+    color: #FFFFFF;
+    background-color: #FF6B6B;
+    border: 1px solid #D6A800;
+}
+
+h4 {
+    font-weight: 500;
+    text-align: left;
+    padding-top: 10px;
+    color: #333333;
+    background-color: #CDB5CD;
+    border: 1px solid #D6A800;
+}
+
+a {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    background-color: #333333;
+}
+
+a:visited {
+    color: red;
+    text-decoration: line-through;
+}
