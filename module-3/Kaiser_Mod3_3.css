@@ -1,0 +1,71 @@
+/* Kaiser, Christopher : Assignment 3.3.css */
+
+#container {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+html, body {
+    font-size: 16px;
+}
+
+p {
+    font-weight: 400;
+    line-height: 1.4em;
+}
+
+h1 {
+    font-weight: 700;
+    text-align: center;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+.side-by-side {
+    width: 45%;
+    display: inline-block;
+    float: left;
+    margin-right: 40px;
+}
+
+.last {
+    width: 100%;
+    margin-top: 60%;
+    float: right;
+    margin-bottom: 20px;
+}
+
+ol {
+    font-weight: 300;
+    border: 1px solid red;
+    border-radius: 15px;
+    padding: 10px;
+    list-style: inside decimal;
+}
+
+ul {
+    font-weight: 300;
+    border: 1px dashed red;
+    border-radius: 15px;
+    padding: 10px;
+    list-style: inside upper-roman;
+}
+
+a {
+    font-weight: 400;
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    background-color: #333333;
+}
+
+a:visited {
+    color: blue;
+    text-decoration: line-through;
+}
