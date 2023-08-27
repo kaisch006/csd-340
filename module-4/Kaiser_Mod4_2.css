@@ -1,0 +1,56 @@
+/* Kaiser, Christopher : Assignment 4.2.css */
+
+#image-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 10%;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+figure {
+    text-align: center;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 0.75em;
+}
+
+.image {
+    border: 5px solid #000000;
+}
+
+.image img {
+    width: 200px;
+    height: 300px;
+}
+
+.last {
+    width: 100%;
+    margin-top: 40px;
+    float: right;
+    margin-bottom: 20px;
+}
+
+a {
+    font-weight: 400;
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    background-color: #333333;
+}
+
+a:visited {
+    color: blue;
+    text-decoration: line-through;
+}
