@@ -1,0 +1,68 @@
+<!-- Kaiser, Christopher : Assignment 9.3 -->
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <script>
+      function displayImage(imageFile){
+        var largerImage = document.getElementById("mainImage");
+        var newNode = document.createElement("img");
+        newNode.id = "mainImage";
+        newNode.src = imageFile;
+        newNode.alt = "Large Image";
+        newNode.className = "mainImage";
+        newNode.style.width = "200px";
+        newNode.style.height = "300px";
+        largerImage.parentNode.replaceChild(newNode, largerImage);
+      }
+
+      function handleRightClick(event, imageElement) {
+        event.preventDefault();
+        var currentImage = imageElement.src.substring(imageElement.src.lastIndexOf('/') + 1);
+        if (currentImage === "conan1.jpg" || currentImage === "conan2.jpg") {
+          displayImage("conan3.jpg");
+        } else if (currentImage === "cthulhu1.jpg" || currentImage === "cthulhu2.jpg") {
+          displayImage("cthulhu3.jpg");
+        }
+        return false;
+      }
+    </script>
+    <link rel='stylesheet' type='text/css' href='body1.css' />
+</head>
+<body>
+    <br />
+    <div>
+        <a href="#" 
+           onmouseover="conan.src='conan2.jpg';" 
+           onmouseout="conan.src='conan1.jpg';" 
+           oncontextmenu="handleRightClick(event, conan);">
+            <img border="0" name="conan" src="conan1.jpg" 
+                 onmouseover="this.src='conan2.jpg';" 
+                 onmouseout="this.src='conan1.jpg';">
+        </a>
+    </div>
+    <br />
+    <div onmouseover="this.style.color='red';" onmouseout="this.style.color='black';">
+        Run your mouse over the image to change.<br />
+    </div>
+    <div>
+        <a href="#" 
+           onmouseover="cthulhu.src='cthulhu2.jpg';" 
+           onmouseout="cthulhu.src='cthulhu1.jpg';" 
+           oncontextmenu="handleRightClick(event, cthulhu);">
+            <img border="0" name="cthulhu" src="cthulhu1.jpg" 
+                 onmouseover="this.src='cthulhu2.jpg';" 
+                 onmouseout="this.src='cthulhu1.jpg';">
+        </a>
+    </div>
+    <br />
+    <div onmouseover="this.style.color='red';" onmouseout="this.style.color='black';">
+        Run your mouse over the image to change.<br />
+        Right-click to see the author.
+    </div>
+    <div>
+        <div id="mainImage">
+        </div>
+    </div>
+</body>
+</html>
