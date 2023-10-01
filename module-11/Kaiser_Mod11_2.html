@@ -1,0 +1,101 @@
+<!-- Kaiser, Christopher : Assignment 11.2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <style>
+        button {
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+        .button-separator {
+            border-top: 1px solid #ccc;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        // Define an array to store user inputs
+        var input = [];
+
+        // Function to add an element to the array
+        function addInput() {
+            var textBox = document.getElementById("entryText");
+            var entry = textBox.value;
+
+            if (entry !== "") {
+                input.push(entry);
+                alert("Added: " + entry);
+                textBox.value = "";
+            }
+        }
+
+        // Function to delete the last input in the array
+        function deleteLastInput() {
+            if (input.length > 0) {
+                var deletedInput = input.pop();
+                alert("Deleted Last Item = " + deletedInput);
+            } else {
+                alert("No inputs to delete");
+            }
+            displayInputs();
+        }
+
+        // Function to display inputs
+        function displayInputs() {
+            var displayArea = document.getElementById("displayArea");
+            displayArea.innerHTML = "";
+
+            for (var i = 0; i < input.length; i++) {
+                var entryNumber = i + 1;
+                var entryText = input[i];
+                var entryElement = document.createElement("p");
+                entryElement.textContent = 'Item ' + entryNumber + ' = ' + entryText;
+                displayArea.appendChild(entryElement);
+            }
+        }
+
+        // Function to delete selected input
+        function deleteChosenInput() {
+            displayInputs();
+
+            setTimeout(function() {
+                var inputToDelete = prompt("Please enter the Item number of the input you want to delete:");
+
+                if (inputToDelete !== null) {
+                    inputToDelete = parseInt(inputToDelete);
+                    if (!isNaN(inputToDelete) && inputToDelete >= 1 && inputToDelete <= input.length) {
+                        var deletedInput = input.splice(inputToDelete - 1, 1);
+                        alert("Deleted: " + deletedInput);
+                    } else {
+                        alert("Invalid Item number.");
+                    }
+                }
+
+                displayInputs();
+            }, 10);
+        }
+    </script>
+</head>
+<body>
+    <h1>Assignment 11.2: JavaScript - Part 3</h1>
+    <p>This is an interactive To Do List. Type in your first item in the text box, then click Add. Click the Display button to see current items in the list. Click on Delete Last if you'd like to remove the last entry. Click on Delete Selected if you'd like to select which entry to delete.
+    </p>
+    <form onsubmit="addInput(); return false;">
+        <div>
+            <label for="entryText">Enter Text:</label>
+            <input type="text" id="entryText" style="width: 230px">
+        </div>
+        <button type="submit">Add</button>
+        <button onclick="displayInputs()">Display</button>
+        <button onclick="deleteLastInput()">Delete Last</button>
+        <button onclick="deleteChosenInput()">Delete Chosen</button>
+    </form>
+    <div class="button-separator">
+    </div>
+    <div id="displayArea">
+    </div>
+</body>
+</html>
+
