@@ -1,0 +1,103 @@
+<!-- Kaiser, Christopher : Assignment 12.2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <meta name="description" content="Assignment 12.2">
+    <meta name="author" content="Christopher Kaiser">
+    <meta name="robots" content="no follow">
+    <meta name="keywords" content="csd, csd-340, assignment, module 12">
+    <link href="Kaiser_Mod12_2.css" rel="stylesheet" type="text/css">
+    <script>
+        // Array to store book titles
+        var bookTitles = [
+            "Jurassic Park",
+            "Game of Thrones (Series)",
+            "Conan the Barbarian (Collection)",
+            "H.P. Lovecraft (Collection)",
+            "Star Wars Young Jedi Knight Series",
+            "Lone Wolf Choose Your Own Adventure Novels",
+            "Villains by Necessity",
+            "Sword of Shannarra Trilogy",
+            "Ender's Game",
+            "Magic Treehouse (Series)"
+        ];
+
+        // Function to display intially
+        function displayInitial() {
+            var output = document.getElementById("output");
+
+            var numberedList = document.createElement("ol");
+            for (var i = 0; i < bookTitles.length; i++) {
+                var listItem = document.createElement("li");
+                listItem.textContent = bookTitles[i];
+                numberedList.appendChild(listItem);
+            }
+
+            output.appendChild(numberedList);
+        }
+
+        // Function to display in ascending order
+        function displayAscending() {
+            var output = document.getElementById("output");
+
+            var numberedList = document.createElement("ol");
+            var sortedTitles = bookTitles.slice().sort();
+            for (var i = 0; i < sortedTitles.length; i++) {
+                var listItem = document.createElement("li");
+                listItem.textContent = sortedTitles[i];
+                numberedList.appendChild(listItem);
+            }
+
+            output.innerHTML = "";
+            output.appendChild(numberedList);
+        }
+
+        // Function to display in descending order
+        function displayDescending() {
+            var output = document.getElementById("output");
+
+            var numberedList = document.createElement("ol");
+            var sortedTitles = bookTitles.slice().sort().reverse();
+            for (var i = 0; i < sortedTitles.length; i++) {
+                var listItem = document.createElement("li");
+                listItem.textContent = sortedTitles[i];
+                numberedList.appendChild(listItem);
+            }
+
+            output.innerHTML = "";
+            output.appendChild(numberedList);
+        }
+
+    </script>
+</head>
+
+<body onload="displayInitial()">
+    <div id="container">
+        <<h1>Assignment 12.2: JavaScript - Part 4</h1>
+        <!-- Left Block -->
+        <div class="side-by-side1">
+            <h3>Top 10 Favorite Books</h3>
+            <button onclick="displayAscending()">Top to Bottom</button>
+            <button onclick="displayDescending()">Bottom to Top</button>
+            <hr>
+            <div id="output"></div>
+        </div>
+        <!-- Right Block -->
+        <div class="side-by-side2">
+            <ul><h3>5 Things I’ve Learned Since the Course Started</h3>
+            
+                <li>What a div is and different content blocks</li>
+                <li>How to manipulate fonts within HTML</li>
+                <li>Becoming more proficient with GitHub and creating a landing page</li>
+                <li>How to hide metadata on your page</li>
+                <li>How to use different sources to check your coding such as W3C</li>
+            </ul>
+        </div>
+        <!-- Final Block -->
+        <div class="last">
+            <a href="https://kaisch006.github.io/csd-340/" style="float: right;">back to Landing Page</a>
+        </div>
+    </div>
+</body>
+</html>
